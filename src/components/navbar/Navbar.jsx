@@ -1,5 +1,5 @@
 import React from "react";
-import CartImg from "../../assets/products/shopping-cart.png"
+import CartImg from "../../assets/shopping-cart.png"
 
 const Navbar = () => {
   return (
@@ -8,7 +8,7 @@ const Navbar = () => {
 
         {/* LEFT: Logo */}
         <div className="text-2xl font-bold">
-          <span className="bg-linear-to-r from-[#4F39F6] to-[#9514FA] bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-4xl bg-clip-text text-transparent">
             DigiTools
           </span>
         </div>
