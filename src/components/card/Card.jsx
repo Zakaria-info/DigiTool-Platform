@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const Card = ({ cardData, setCount,cartItems, setCartItems }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const handleCartCount = () => {
+
+    toast.success(`${cardData.name} is Added to Cart`);
     setIsSelected(true);
     setCount(prev => prev + 1);
     setCartItems([...cartItems, cardData])
