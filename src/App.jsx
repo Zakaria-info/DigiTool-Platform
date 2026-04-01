@@ -6,6 +6,8 @@ import { Suspense, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import GetStartedSection from "./components/getStarted/getStartedSection";
 import Pricing from "./components/pricing/Pricing";
+import Footer from "./components/footer/Footer";
+
 
 const fetchData = async () => {
   const res = await fetch("/data.json");
@@ -27,6 +29,7 @@ function App() {
       </Suspense>
       <GetStartedSection/>
       <Pricing/>
+      <Footer/>
 
       <ToastContainer />
     </>
