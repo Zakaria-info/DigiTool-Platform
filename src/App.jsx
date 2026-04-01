@@ -5,6 +5,7 @@ import Featured from "./components/featured/Featured";
 import { Suspense, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import GetStartedSection from "./components/getStarted/getStartedSection";
+import Pricing from "./components/pricing/Pricing";
 
 const fetchData = async () => {
   const res = await fetch("/data.json");
@@ -25,6 +26,7 @@ function App() {
         <Featured dataPromise={dataPromise}  setCount={setCount}/>
       </Suspense>
       <GetStartedSection/>
+      <Pricing/>
 
       <ToastContainer />
     </>
