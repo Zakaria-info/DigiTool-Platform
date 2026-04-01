@@ -1,11 +1,10 @@
 import React from "react";
-import CartImg from "../../assets/shopping-cart.png"
+import CartImg from "../../assets/shopping-cart.png";
 
-const Navbar = () => {
+const Navbar = ({count}) => {
   return (
     <div className="w-full bg-white ">
       <div className="max-w-400 mx-auto h-23 px-4 flex items-center justify-between">
-
         {/* LEFT: Logo */}
         <div className="text-2xl font-bold">
           <span className="bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-4xl bg-clip-text text-transparent">
@@ -24,13 +23,14 @@ const Navbar = () => {
 
         {/* RIGHT: Actions */}
         <div className="flex items-center gap-4">
-
           {/* Cart Icon */}
-          <img
-            src={CartImg}
-            alt="cart"
-            className="w-6 h-6 cursor-pointer"
-          />
+          <div className="relative">
+            <img src={CartImg} alt="cart" className="w-6 h-6 cursor-pointer" />
+
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+              {count}
+            </span>
+          </div>
 
           {/* Login */}
           <button className="hidden sm:block font-medium text-gray-700 hover:text-black">
@@ -38,9 +38,11 @@ const Navbar = () => {
           </button>
 
           {/* Get Started Button */}
-          <button className="btn border-none rounded-3xl text-white px-5 
+          <button
+            className="btn border-none rounded-3xl text-white px-5 
             bg-linear-to-r from-[#4F39F6] to-[#9514FA] 
-            hover:opacity-90">
+            hover:opacity-90"
+          >
             Get Started
           </button>
 
@@ -53,15 +55,26 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li><a>Products</a></li>
-              <li><a>Features</a></li>
-              <li><a>Pricing</a></li>
-              <li><a>Testimonials</a></li>
-              <li><a>FAQ</a></li>
-              <li><a>Login</a></li>
+              <li>
+                <a>Products</a>
+              </li>
+              <li>
+                <a>Features</a>
+              </li>
+              <li>
+                <a>Pricing</a>
+              </li>
+              <li>
+                <a>Testimonials</a>
+              </li>
+              <li>
+                <a>FAQ</a>
+              </li>
+              <li>
+                <a>Login</a>
+              </li>
             </ul>
           </div>
-
         </div>
       </div>
     </div>

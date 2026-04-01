@@ -2,7 +2,7 @@ import Banner from "./components/banner/Banner";
 import Navbar from "./components/navbar/Navbar";
 import Rating from "./components/rating/rating";
 import Featured from "./components/featured/Featured";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 
 const fetchData = async () => {
   const res = await fetch("/data.json");
@@ -11,14 +11,16 @@ const fetchData = async () => {
 
 function App() {
   const dataPromise = fetchData();
+  const [count, setCount] = useState(0)
+  
 
   return (
     <>
-      <Navbar />
+      <Navbar count={count}/>
       <Banner />
       <Rating />
       <Suspense fallback={<span className="loading loading-dots loading-xl"></span>}>
-        <Featured dataPromise={dataPromise} />
+        <Featured dataPromise={dataPromise}  setCount={setCount}/>
       </Suspense>
     </>
   );
